@@ -1,5 +1,6 @@
-# mekar-app
-mekar-app adalah sebuah aplikasi REST API yang dibuat menggunakan Python.
+# Mekar Test Engineer
+Mekar Test Engineer adalah sebuah aplikasi REST API yang dibuat menggunakan Python.
+
 
 ## Table of Contents
 - [mekar-app](#mekar-app)
@@ -12,19 +13,20 @@ mekar-app adalah sebuah aplikasi REST API yang dibuat menggunakan Python.
     - [Transfer](#transfer)
       - [Request](#request-1)
       - [Response](#response-1)
+  - [Unit Test](#unit-test)
 
 
 ## Installation
 Pastikan sudah install pada desktop anda [docker](https://www.docker.com/)
 
-Download source code dan buka terminal dan masuk ke dalam directory ``mekar``
+Clone repository [ini](https://github.com/vickyindahwati/mekartestengineer.git) kemudian buka terminal dan masuk ke dalam directory ``mekartestengineer``
 ```bash
-~ $ cd mekar
+~ $ cd mekartestengineer
 ```
 
 Jalankan perintah pada terminal anda
 ```bash
-~/mekar $ docker-compose -f docker-compose.yml up --build
+~/mekartestengineer $ docker-compose -f docker-compose.yml up --build
 ```
 
 tunggu sampai proses download dan build selesai. Jika sudah selesai pada terminal anda akan menampilkan seperti berikut
@@ -32,10 +34,8 @@ tunggu sampai proses download dan build selesai. Jika sudah selesai pada termina
 mekar | [2022-11-05 00:26:30,878] INFO in serve: Serving at http://0.0.0.0:5000
 ```
 
-
-
 ## REST API
-Berikut adalah REST API yang ada pada mekar-app
+Berikut adalah REST API yang ada pada mekartestengineer
 
 
 ### Check Saldo
@@ -101,3 +101,12 @@ Content-Type: application/json
 Content-Length: 72
 Date: Sat, 05 Nov 2022 00:33:31 GMT
 ```
+
+## Unit Test
+Untuk menjalankan unit test, buka terminal dan masukkan perintah sbb :
+```bash
+mekartestengineer $ pytest tests/
+```
+
+Berikut adalah hasil dari unit test :
+![ut](doc/unit_test_result.png)
