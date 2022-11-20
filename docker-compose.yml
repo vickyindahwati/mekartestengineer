@@ -1,0 +1,28 @@
+version: '3.10'
+
+services:
+  mekar_db:
+    container_name: mekar_db
+    image: postgres:15-alpine
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=mekar
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+      - ./sql/schema.sql:/docker-entrypoint-initdb.d/1_mekar.sql
+      - ./sql/seed.sql:/docker-entrypoint-initdb.d/2_mekar.sql
+
+  mekar:
+    container_name: mekar
+    image: mekar
+    build: .
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mekar_db
+
+volumes:
+  postgres_data: {}
