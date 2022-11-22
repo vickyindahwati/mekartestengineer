@@ -48,7 +48,7 @@ def transfer(from_account_number):
     if amount <= 0:
         return {"message": "amount must be more than 0"}, 400
 
-    if amount > account[2]:
+    if account is not None and (amount > account[2]):
         return {"message": "insufficient funds"}, 400
 
     if type(to_account_number) == int:
