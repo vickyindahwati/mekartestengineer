@@ -105,7 +105,7 @@ Date: Sat, 05 Nov 2022 00:33:31 GMT
 ## Unit Test
 Untuk menjalankan unit test, buka terminal dan masukkan perintah sbb :
 ```bash
-mekartestengineer $ pytest tests/
+mekartestengineer $ docker exec mekar pytest tests/
 ```
 
 Berikut adalah hasil dari unit test :
